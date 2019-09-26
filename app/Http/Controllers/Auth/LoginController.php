@@ -28,10 +28,10 @@ class LoginController extends Controller
     }
 
    
-    public function refreshCaptcha()
-    {
-        return response()->json(['captcha'=> captcha_img()]);
-    }
+    // public function refreshCaptcha()
+    // {
+    //     return response()->json(['captcha'=> captcha_img()]);
+    // }
 
    
     use AuthenticatesUsers;

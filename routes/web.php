@@ -19,9 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/kategori_artikel','kategoriArtikelController@index')->name('kategori_artikel.index');
+
 Route::get('login', 'HomeController@myCaptcha')->name('myCaptcha');
 Route::post('login', 'HomeController@myCaptchaPost')->name('myCaptcha.post');
-Route::get('refresh_captcha', 'HomeController@refresh_captcha')->name('refresh_captcha');
+Route::get('refresh_captcha', 'HomeController@refreshCaptcha')->name('refresh_captcha');
 
 Auth::routes();
 
