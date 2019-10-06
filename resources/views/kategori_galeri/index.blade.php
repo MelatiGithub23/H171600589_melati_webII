@@ -3,7 +3,7 @@
 	    <body>
 	    <table border="1">
 
-	    <title>kategori_artikel</title>
+	    <title>kategori_galeri</title>
 	         <tr>
 	         	  <td>Id</td>
 	         	  <td>Nama</td>
@@ -16,7 +16,7 @@
 		
 
 			</tr>
-		@foreach($kategori_artikel as $item)
+		@foreach($kategori_galeri as $item)
 		<tr>
 			<td>{!! $item->id !!}</td>
 			<td>{!! $item->nama !!}</td>
