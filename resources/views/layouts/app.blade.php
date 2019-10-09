@@ -34,6 +34,32 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                        @auth
+
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Menu Data <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('artikel.index') }}">{{ __('Artikel') }}</a>
+                                <a class="dropdown-item" href="{{ route('berita.index') }}">{{ __('berita') }}</a>
+                                <a class="dropdown-item" href="{{ route('galeri.index') }}">{{ __('galeri') }}</a>
+                                <a class="dropdown-item" href="{{ route('pengumuman.index') }}">{{ __('pengumuman') }}</a>
+                                <a class="dropdown-item" href="{{ route('kategori_artikel.index') }}">{{ __('kategori artikel') }}</a>
+                                <a class="dropdown-item" href="{{ route('kategori_berita.index') }}">{{ __('kategori berita') }}</a>
+                                <a class="dropdown-item" href="{{ route('kategori_galeri.index') }}">{{ __('kategori galeri') }}</a>
+                                <a class="dropdown-item" href="{{ route('kategori_pengumuman.index') }}">{{ __('kategori pengumuman') }}</a>
+
+                                </div>
+
+                            </li>
+
+
+
+                             
+                          @endauth       
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

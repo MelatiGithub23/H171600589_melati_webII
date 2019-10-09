@@ -1,13 +1,19 @@
-<html>
-<head>
-	    <body>
-	    <table border="1">
-
-	    <title>kategori_galeri</title>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md-8">
+			<div class="card">
+				<div class="card-header">List kategori_galeri</div>
+				<div class="card-body">
+				<a href="{!! route('kategori_galeri.create') !!}" class="btn btn-primary">Tambah Data </a>
+				<div class="form-group row">
+						<div class="table-responsive">
+							<table class="table table-stripped table-bordered">
+								<thead align="center" style="background-color: pink;">
 	         <tr>
 	         	  <td>Id</td>
 	         	  <td>Nama</td>
 	         	  <td>Users_id</td>
+	         	  <td>Aksi</td>
 
 	         </tr>
 
@@ -21,9 +27,16 @@
 			<td>{!! $item->id !!}</td>
 			<td>{!! $item->nama !!}</td>
 			<td>{!! $item->users_id !!}</td>
-		</tr>
-	
-		@endforeach
-		
-		</table>
+		<td>
+	<a href="{!! route('kategori_galeri.show',[$item->id]) !!}" class="btn btn-sm btn-success"> Lihat </a>
+					</td>
+</tr>
+@endforeach 	
+				</table>
+
+				</div>	
+				</div>
+			</div>
 		</div>
+	</div>
+</div>

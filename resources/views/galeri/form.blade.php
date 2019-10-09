@@ -58,7 +58,7 @@
         <button type="submit" class="btn btn-primary">
             {{ __('Done') }}
         </button>
-        <a href="{!! route('berita.index') !!}" class="btn btn-danger">
+        <a href="{!! route('galeri.index') !!}" class="btn btn-danger">
             Cancel
         </a>
     </div>

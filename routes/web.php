@@ -31,10 +31,13 @@ Route::get('/pengumuman','pengumumanController@index')->name('pengumuman.index')
 Route::get('/artikel/create','artikelcontroller@create')->name('artikel.create');
 Route::post('/artikel/create','artikelcontroller@store')->name('artikel.store');
 Route::get('/artikel/{artikel}','artikelcontroller@show')->name('artikel.show');
+Route::get('/artikel/{id}/edit','artikelcontroller@edit')->name('artikel.edit');
+Route::patch('/artikel/{id}','artikelcontroller@update')->name('artikel.update');
 
-Route::get('/kategori_artikel/create','KategoriArtikelController@create')->name('Kategori_artikel.create');
-Route::post('/kategori_artikel/create','KategoriArtikelController@store')->name('kategori_artikel.store');
-Route::get('/kategori_artikel/{kategori_artikel}','KategoriArtikelcontroller@show')->name('kategori_artikel.show');
+
+Route::get('/kategori_artikel/create','kategoriArtikelController@create')->name('kategori_artikel.create');
+Route::post('/kategori_artikel/create','kategoriArtikelController@store')->name('kategori_artikel.store');
+Route::get('/kategori_artikel/{kategori_artikel}','kategoriArtikelcontroller@show')->name('kategori_artikel.show');
 
 Route::get('/berita/create','beritaController@create')->name('berita.create');
 Route::post('/berita/create','beritaController@store')->name('berita.store');

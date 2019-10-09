@@ -13,3 +13,4 @@ class berita extends Model
     ];
     //
 }
+ 
