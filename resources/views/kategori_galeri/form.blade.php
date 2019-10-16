@@ -3,14 +3,9 @@
     <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('nama') }}</label>
 
     <div class="col-md-6">
-        <input id="nama" type="text" class="form-control @error('judul') is-invalid @enderror" name="nama" required autofocus>
-
-        @error('judul')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
+        {!! Form::text('nama', null, ['class' => 'form-control', 'name' => 'nama', 'value' => old('nama')]) !!}
     </div>
+</div>
 </div>
 
 
@@ -23,14 +18,13 @@
             <strong>{{ $message }}</strong>
         </span>
     @enderror
-</div>
-
+    </div>
 <div class="form-group row mb-0">
     <div class="col-md-6 offset-md-4">
         <button type="submit" class="btn btn-primary">
             {{ __('Done') }}
         </button>
-        <a href="{!! route('berita.index') !!}" class="btn btn-danger">
+        <a href="{!! route('kategori_galeri.index') !!}" class="btn btn-danger">
             Cancel
         </a>
     </div>

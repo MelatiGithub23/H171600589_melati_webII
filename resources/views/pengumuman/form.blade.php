@@ -1,9 +1,10 @@
 @csrf
 <div class="form-group row">
-    <label for="judul" class="col-md-4 col-form-label text-md-right">{{ __('gelar') }}</label>
+    <label for="judul" class="col-md-4 col-form-label text-md-right">{{ __('judul') }}</label>
 
     <div class="col-md-6">
-        <input id="judul" type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" required autofocus>
+        {!! Form::text('judul', null, ['class' => 'form-control', 'name' => 'judul', 'value' => old('judul')]) !!}
+
 
         @error('judul')
             <span class="invalid-feedback" role="alert">
@@ -14,12 +15,26 @@
 </div>
 
 <div class="form-group row">
-    <label for="isi" class="col-md-4 col-form-label text-md-right">{{ __('konten') }}</label>
+    <label for="isi" class="col-md-4 col-form-label text-md-right">{{ __('isi') }}</label>
 
     <div class="col-md-6">
         {!! Form::textarea('isi', null, ['class' => 'form-control', 'name' => 'isi']) !!}
     </div>
 </div>
+<div class="form-group row">
+    <label for="users_id" class="col-md-4 col-form-label text-md-right">{{ __('users_id') }}</label>
+<div class="col-md-6">
+        {!! Form::text('users_id', null, ['class' => 'form-control', 'name' => 'users_id', 'value' => old('users_id')]) !!}
+
+
+        @error('users_id')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+    </div>
+</div>
+
 
 <div class="form-group row">
     <label for="kategori_pengumuman_id" class="col-md-4 col-form-label text-md-right">{{ __('artikel_kategori') }}</label>

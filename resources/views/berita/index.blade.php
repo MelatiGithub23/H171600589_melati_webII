@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
@@ -14,8 +17,8 @@
 	         <tr>
 	         	  <th>Id</th>
 	         	  <th>judul</th>
-	         	  <th>Users_id</th>
 	         	  <th>Isi</th>
+	         	  <th>Users_id</th>
 	         	  <th>Kategori_berita_id</th>
 	         	  <td> Aksi </td>
 
@@ -36,6 +39,12 @@
 		<td>
 	
 		<a href="{!! route('berita.show',[$item->id]) !!}" class="btn btn-sm btn-success"> Lihat </a>
+		<a href="{!! route('berita.edit',[$item->id]) !!}" class="btn btn-sm btn-success"> Ubah 
+<a/>
+
+				{!! Form::open(['route' => ['berita.destroy', $item->id], 'method' => 'delete']) !!}
+				    {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-secondary']) !!}
+				  {!! Form::close() !!}
 					</td>
 </tr>
 @endforeach 	
@@ -45,3 +54,4 @@
 		</div>
 	</div>
 </div>
+@endsection

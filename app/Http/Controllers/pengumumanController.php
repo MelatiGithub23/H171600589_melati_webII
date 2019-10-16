@@ -29,6 +29,28 @@ class pengumumanController extends Controller
         $pengumuman = pengumuman::find($id);
         return view('pengumuman.show', compact('pengumuman'));
     }
+    public function edit($id)
+{
+    $pengumuman=pengumuman::find($id);
 
+    $kategori_pengumuman = kategori_pengumuman::pluck('nama', 'id');
+
+    return view('pengumuman.edit', compact('pengumuman', 'kategori_pengumuman'));
+    
+} 
+  public function update(Request $request, $id)
+  {
+    $edit = $request->except('_method', '_token');
+    $asdf = pengumuman::find($id)->update($edit);
+
+    return redirect(route('pengumuman.index'));
+  }
+  public function destroy($id)
+  {
+
+    pengumuman::destroy($id);
+
+    return redirect(route('pengumuman.index'));
+  }
 }
 

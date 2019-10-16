@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
@@ -37,14 +40,19 @@
 		<td>
 	
 		<a href="{!! route('galeri.show',[$item->id]) !!}" class="btn btn-sm btn-success"> Lihat </a>
+		<a href="{!! route('galeri.edit',[$item->id]) !!}" class="btn btn-sm btn-success"> Ubah 
+<a/>
+
+				{!! Form::open(['route' => ['galeri.destroy', $item->id], 'method' => 'delete']) !!}
+				    {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-secondary']) !!}
+				  {!! Form::close() !!}
 					</td>
 </tr>
 @endforeach 	
-				</table>
-
-				</div>	
+				</table>	
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+@endsection

@@ -30,4 +30,33 @@ class kategoriArtikelController extends Controller
     
 
    }
+   public function edit($id)
+{
+    $kategori_artikel=kategori_artikel::find($id);
+
+    return view('kategori_artikel.edit', compact('kategori_artikel', 'kategori_artikel'));
+
+/*
+    if (empty($artikel))
+    {
+        return redirect (route('artikel.index'));
+    }*/
+    //return view('artikel.edit', compact('artikel', 'kategori_artikel'));
+    
+} 
+  public function update(Request $request, $id)
+  {
+    $edit = $request->except('_method', '_token');
+    kategori_artikel::find($id)->update($edit);
+
+    return redirect(route('kategori_artikel.index'));
+  }
+
+  public function destroy($id)
+  {
+
+    kategori_artikel::destroy($id);
+
+    return redirect(route('kategori_artikel.index'));
+  }
 }

@@ -9,7 +9,7 @@ class artikel extends Model
 	protected $table='artikel';
     
     protected $fillable=[
-          'judul','users_id','kategori_artikel_id'
+          'judul','isi','users_id','kategori_artikel_id'
     ];
     //
 }

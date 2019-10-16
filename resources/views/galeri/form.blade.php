@@ -1,11 +1,12 @@
 @csrf
 <div class="form-group row">
-    <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('gelar') }}</label>
+    <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('nama') }}</label>
 
     <div class="col-md-6">
-        <input id="nama" type="text" class="form-control @error('judul') is-invalid @enderror" name="nama" required autofocus>
+        {!! Form::text('nama', null, ['class' => 'form-control', 'name' => 'nama', 'value' => old('nama')]) !!}
 
-        @error('judul')
+
+        @error('nama')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -14,12 +15,13 @@
 </div>
 
 <div class="form-group row">
-    <label for="path" class="col-md-4 col-form-label text-md-right">{{ __('path') }}</label>
+    <label for="path" class="col-md-4 col-form-label text-md-right">{{ __('Keterangan') }}</label>
 
     <div class="col-md-6">
-        <input id="path" type="text" class="form-control @error('judul') is-invalid @enderror" name="path" required autofocus>
+        {!! Form::text('keterangan', null, ['class' => 'form-control', 'name' => 'keterangan', 'value' => old('keterangan')]) !!}
 
-        @error('judul')
+
+        @error('keterangan')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -28,12 +30,20 @@
 </div>
 
 <div class="form-group row">
-    <label for="keterangan" class="col-md-4 col-form-label text-md-right">{{ __('konten') }}</label>
+    <label for="keterangan" class="col-md-4 col-form-label text-md-right">{{ __('path') }}</label>
 
     <div class="col-md-6">
-        {!! Form::textarea('isi', null, ['class' => 'form-control', 'name' => 'isi']) !!}
+         {!! Form::textarea('path', null, ['class' => 'form-control', 'name' => 'path', 'value' => old('path')]) !!}
+
+
+        @error('path')
+<span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
     </div>
 </div>
+
 
 <div class="form-group row">
     <label for="kategori_galeri_id" class="col-md-4 col-form-label text-md-right">{{ __('berita_kategori') }}</label>
