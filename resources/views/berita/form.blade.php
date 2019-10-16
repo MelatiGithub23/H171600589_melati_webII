@@ -42,7 +42,7 @@
 <div class="form-group row mb-0">
     <div class="col-md-6 offset-md-4">
         <button type="submit" class="btn btn-primary">
-            {{ __('Done') }}
+            Done
         </button>
         <a href="{!! route('berita.index') !!}" class="btn btn-danger">
             Cancel

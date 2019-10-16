@@ -6,7 +6,6 @@
         {!! Form::text('nama', null, ['class' => 'form-control', 'name' => 'nama', 'value' => old('nama')]) !!}
     </div>
 </div>
-</div>
 
 
 
